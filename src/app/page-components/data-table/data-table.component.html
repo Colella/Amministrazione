@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <!--<table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+      </tbody>
+    </table>-->
+  <!--  <button class="btn btn-danger" (click)="createTable()">CLICCAMI</button>-->
+
+    <div *ngFor="let row of table?.pagamenti; let i = index;" class="col-md-2 col-lg-1 col-sm-3 bordered">
+      <div>{{ row.mese }}</div>
+      <div>{{ row.euro}} €</div>
+   <!--   <div class="column border"> {{ row.mese }}  </div>
+      <div class="border"> </div>-->
+    </div>
+
+
+  </div>
+<div class="row">
+
+  <div class="col-lg-2 offset-lg-10 col-md-12 col-sm-12 total" >Casa</div>
+
+</div>
+</div>

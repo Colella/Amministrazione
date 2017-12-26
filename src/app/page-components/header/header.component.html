@@ -1,0 +1,13 @@
+<div class="header row">
+
+  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
+  Amministrazione De Luca
+  </div>
+
+  <div class="col-lg-3 offset-lg-5 panel col-md-4 offset-md-3 col-sm-4  offset-sm-3  col-xs-4" *ngIf="globals['USER'] !== undefined">
+    Benvenuto, Sig.re {{ globals['USER'] }}
+  </div>
+  <div class="col-lg-1 panel col-md-1 col-sm-1  col-xs-4" *ngIf="globals['USER'] !== undefined">
+    <a (click)="logout()">Logout</a>
+  </div>
+</div>

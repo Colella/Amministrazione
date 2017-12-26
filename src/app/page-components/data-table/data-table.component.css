@@ -1,0 +1,23 @@
+.row {
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.column {
+  margin-right: 10px;
+}
+
+.bordered {
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: black;
+  background-color: #8b8b8b;
+}
+
+.total {
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: black;
+  background-color: #8b8b8b;
+}

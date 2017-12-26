@@ -1,0 +1,22 @@
+.header {
+  background-color: black;
+  height: 50px;
+  width: 100%;
+  top: 0;
+  color: #8b8b8b;
+  padding: 10px 10px 0 10px;
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.panel {
+  text-align: right;
+}
+
+a {
+  cursor: pointer;
+  color: #d3d3d3 !important;
+}
