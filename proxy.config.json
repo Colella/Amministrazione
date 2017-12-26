@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://amministrazionedeluca.altervista.org/",
+    "secure": false,
+    "pathRewrite": {"^/api" : ""},
+    "changeOrigin": true
+  }
+}
