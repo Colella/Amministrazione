@@ -21,10 +21,10 @@ export class ConfigService {
           if (localStorage.getItem('token') !== null) {
             const token = this.globals['TOKEN'] = localStorage.getItem('token');
             const loginUrl = '/api/php/get.php?token=' + token;
-            this.globals['USER_LOGGED'] = true;
             this.http.get(loginUrl).subscribe(
-              (data) => {
-                this.globals['USER'] = data['USER'];
+              data => {
+                this.globals['USER_LOGGED'] = data !== null;
+                this.globals['USER'] = data !== null ? data['USER'] : undefined;
                 resolve(true);
               });
           } else {

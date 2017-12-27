@@ -1,6 +1,8 @@
+@import '../../../variables.scss';
+
 footer {
  /* display: block;*/
-  color: #555555;
+  color: #d3d3d3 !important;
   background-color: black;
 }
 
@@ -13,10 +15,6 @@ footer {
   background-color: black;
 }
 
-a {
-  color: #1e1e1e;
-}
-
 .footer-text {
   padding-top: 30px;
 }
@@ -26,3 +24,12 @@ a {
   margin-right: 0 !important;
 }
 
+a {
+  cursor: pointer;
+  color: #d3d3d3 !important;
+}
+
+a:hover {
+  color: $link-hover !important;
+  text-decoration: none !important;
+}

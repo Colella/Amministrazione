@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .header {
   background-color: black;
   height: 50px;
@@ -19,4 +21,8 @@
 a {
   cursor: pointer;
   color: #d3d3d3 !important;
+}
+
+a:hover {
+  color: $link-hover !important;
 }
