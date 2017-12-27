@@ -2,7 +2,7 @@
   <app-header [user]="user"></app-header>
 
 
-<div [ngSwitch]="globals['USER_LOGGED']">
+<div [ngSwitch]="globals['USER_LOGGED']" class="home-page">
 
   <div *ngSwitchCase="true">
     <app-data-table></app-data-table>
