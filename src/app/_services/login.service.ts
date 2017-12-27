@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
+import {LOGIN_API} from '../../environments/environment';
 
 
 @Injectable()
@@ -9,10 +10,10 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   passwordCheck(user?, password?) {
-    if (password === '\' OR \'1\'=\'1') {
-      console.log('SQL INJECTION "\' OR \'1\'=\'1"');
+    if (password.includes('\'')) {
+      console.log('SQL INJECTION ', password);
     } else {
-      const url = '/api/php/login.php';
+      const url = LOGIN_API;
       const body = {
         user: user,
         password: password

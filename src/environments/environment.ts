@@ -6,3 +6,5 @@
 export const environment = {
   production: false
 };
+
+export const LOGIN_API = '/api/php/login.php';

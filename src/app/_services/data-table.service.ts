@@ -12,7 +12,6 @@ export class DataTableService {
   create() {
     const user = this.globals['USER'];
     const token = this.globals['TOKEN'];
-    console.log(user, token);
     return new Observable(project => {
       this.http.get('/api/php/getTable.php?token=' + token + '&user=' + user).subscribe(
         data => {

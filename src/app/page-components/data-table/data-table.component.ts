@@ -9,6 +9,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class DataTableComponent implements OnInit {
   table: any;
+  total: any;
 
   constructor(private dataTableService: DataTableService, private http: HttpClient) {
   }
@@ -19,18 +20,17 @@ export class DataTableComponent implements OnInit {
 
 
   createTable() {
-
     this.dataTableService.create().subscribe(
       table => {
 
         this.table = JSON.parse(table['data'])[1];
         console.log(this.table);
-        /*_table.map(elem => {
-            console.log(elem);
-          });
-*/
-
-        // console.log(this.table);
+        let total = 0;
+        this.table.pagamenti.forEach(month => {
+          total += Number(month.euro);
+          console.log(Number(month.euro));
+        });
+        this.total = total;
       });
   }
 
@@ -38,16 +38,16 @@ export class DataTableComponent implements OnInit {
 
     const pagamenti = [];
     const mesi = ['Gennaio', 'Febbraio',
-    'Marzo', 'Aprile',
-    'Maggio', 'Giugno',
-    'Luglio', 'Agosto',
-    'Settembre', 'Ottobre',
-    'Novembre', 'Dicembre'];
+      'Marzo', 'Aprile',
+      'Maggio', 'Giugno',
+      'Luglio', 'Agosto',
+      'Settembre', 'Ottobre',
+      'Novembre', 'Dicembre'];
 
     for (let i = 0; i < mesi.length; i++) {
       pagamenti.push({
-        'mese' : mesi[i],
-        'euro' : '40.00'
+        'mese': mesi[i],
+        'euro': '40.00'
       });
     }
 
@@ -56,7 +56,7 @@ export class DataTableComponent implements OnInit {
       data: [
         {'user': 'utente'},
         {
-          'pagamenti':  pagamenti
+          'pagamenti': pagamenti
         }
       ]
     };

@@ -33,3 +33,10 @@ a:hover {
   color: $link-hover !important;
   text-decoration: none !important;
 }
+
+img {
+  position: absolute;
+  height: 90px;
+  bottom: 20px;
+  right: 25px;
+}

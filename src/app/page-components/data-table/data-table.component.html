@@ -27,7 +27,6 @@
       </tbody>
     </table>-->
   <!--  <button class="btn btn-danger" (click)="createTable()">CLICCAMI</button>-->
-
     <div *ngFor="let row of table?.pagamenti; let i = index;" class="col-md-2 col-lg-1 col-sm-3 bordered">
       <div>{{ row.mese }}</div>
       <div>{{ row.euro}} €</div>
@@ -39,7 +38,7 @@
   </div>
 <div class="row">
 
-  <div class="col-lg-2 offset-lg-10 col-md-12 col-sm-12 total" >Casa</div>
+  <div class="col-lg-2 offset-lg-10 col-md-12 col-sm-12 total" > Totale: {{ total }} €</div>
 
 </div>
 </div>
