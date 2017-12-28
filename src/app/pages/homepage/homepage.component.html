@@ -4,7 +4,7 @@
 
   <div [ngSwitch]="globals['USER_LOGGED']" class="row home-page">
     <div class="col-lg-2 col-md-2 left-menu " [ngClass]="{'hidden' : !leftMenu, 'showed' : leftMenu}">
-      <app-left-menu></app-left-menu>
+      <app-left-menu [leftMenu]="leftMenu"></app-left-menu>
     </div>
     <div id="main" class="col-lg-8 col-md-4 col-sm-4 col-xs-4">
          <!--//[ngClass]="{'offset-md-2 offset-lg-2 offset-sm-3 ' : !leftMenu}">-->
