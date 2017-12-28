@@ -10,6 +10,8 @@ import {HttpClient} from '@angular/common/http';
 export class DataTableComponent implements OnInit {
   table: any;
   total: any;
+  name: any;
+  surname: any;
 
   constructor(private dataTableService: DataTableService, private http: HttpClient) {
   }
@@ -22,13 +24,13 @@ export class DataTableComponent implements OnInit {
   createTable() {
     this.dataTableService.create().subscribe(
       table => {
-
-        this.table = JSON.parse(table['data'])[1];
-        console.log(this.table);
+        const json = JSON.parse(table['data']);
+        this.name = json[1].name;
+        this.surname = json[2].surname;
+        this.table = json[3];
         let total = 0;
         this.table.pagamenti.forEach(month => {
           total += Number(month.euro);
-          console.log(Number(month.euro));
         });
         this.total = total;
       });
@@ -55,6 +57,8 @@ export class DataTableComponent implements OnInit {
       user: 'utente',
       data: [
         {'user': 'utente'},
+        {'name': 'Walter'},
+        {'surname': 'De Luca'},
         {
           'pagamenti': pagamenti
         }

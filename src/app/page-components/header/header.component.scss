@@ -5,7 +5,7 @@
   height: 50px;
   width: 100%;
   top: 0;
-  color: #8b8b8b;
+  color: $link-hover !important;
   padding: 10px 10px 0 10px;
 }
 
@@ -20,7 +20,7 @@
 
 a {
   cursor: pointer;
-  color: #d3d3d3 !important;
+  color: $link !important;
 }
 
 a:hover {
