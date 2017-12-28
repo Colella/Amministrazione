@@ -14,6 +14,8 @@ import {HeaderComponent} from './page-components/header/header.component';
 import {SimpleGlobal} from 'ng2-simple-global';
 import {ConfigService} from './_services/config.service';
 import {DataTableService} from './_services/data-table.service';
+import { LeftMenuComponent } from './page-components/left-menu/left-menu.component';
+import { RightMenuComponent } from './page-components/right-menu/right-menu.component';
 
 export function init(config: ConfigService) {
   return () => config.load();
@@ -26,7 +28,9 @@ export function init(config: ConfigService) {
     DataTableComponent,
     HomepageComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    LeftMenuComponent,
+    RightMenuComponent,
   ],
   imports: [
     NgbModule,

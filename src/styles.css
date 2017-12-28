@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
 body {
-  background-color: grey;
+  background-color: #1c1c1c;
 }
+
+

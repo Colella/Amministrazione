@@ -1,13 +1,32 @@
+@import '../../../variables.scss';
+
 .container-fluid {
   padding-right: 0;
   padding-left: 0;
+  background-color: $background;
 }
 
 .row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  /*margin-left: 0 !important;
+  margin-right: 0 !important;*/
 }
 
 .home-page {
   min-height: 400px;
+}
+
+#main {
+  margin-top: 30px;
+}
+
+.hidden {
+  opacity: 0;
+  transition: 0.4s;
+  // display: none;
+}
+
+.showed {
+  opacity: 1;
+  transition: 0.4s;
+  // display: inherit;
 }

@@ -1,13 +1,22 @@
-<div class="header row">
+<nav>
+  <div class="header row">
 
-  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-  Amministrazione De Luca
-  </div>
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 head">
+      <div class="menu-logo" (mouseenter)="openMenu()" (mouseleave)="closeMenu()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+      <div class="title">
+        Amministrazione De Luca
+      </div>
 
-  <div class="col-lg-3 offset-lg-5 panel col-md-4 offset-md-3 col-sm-4  offset-sm-3  col-xs-4" *ngIf="globals['USER'] !== undefined">
-    Benvenuto, {{ globals['USER'] }}
+    </div>
+
+    <div class="col-lg-3 offset-lg-4 panel col-md-4 offset-md-2 col-sm-4 offset-sm-3 col-xs-4"
+         *ngIf="globals['USER'] !== undefined">
+      <!--Benvenuto, {{ globals['USER'] }}-->
+    </div>
+    <div class="col-lg-2 panel col-md-2 col-sm-1 col-xs-4 logout" *ngIf="globals['USER'] !== undefined">
+      <i class="fa fa-user-circle" aria-hidden="true"></i> <a (click)="logout()">Logout</a>
+    </div>
   </div>
-  <div class="col-lg-1 panel col-md-1 col-sm-1  col-xs-4" *ngIf="globals['USER'] !== undefined">
-    <a (click)="logout()">Logout</a>
-  </div>
-</div>
+</nav>

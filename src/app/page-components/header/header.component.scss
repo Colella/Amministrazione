@@ -1,18 +1,44 @@
 @import '../../../variables.scss';
 
-.header {
-  background-color: black;
-  height: 50px;
-  width: 100%;
-  top: 0;
-  color: $link-hover !important;
-  padding: 10px 10px 0 10px;
+.head {
+  overflow: hidden;
 }
 
-.row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+.header {
+  font-size: 25px;
+  background-color: black;
+  height: 70px;
+  width: 100%;
+  top: 0;
+  color: $text !important;
+  // padding: 10px 10px 0 10px;
 }
+
+.menu-logo {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  height: 100%;
+
+}
+
+.title, .logout {
+  margin-top: 10px;
+}
+
+.menu-logo:hover {
+  background-color: $link-hover;
+  color: black;
+}
+
+  /*
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  */
 
 .panel {
   text-align: right;
@@ -25,4 +51,8 @@ a {
 
 a:hover {
   color: $link-hover !important;
+}
+
+.fa {
+  margin-right: 10px;
 }

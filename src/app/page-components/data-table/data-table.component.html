@@ -1,18 +1,4 @@
-<div class="container-fluid">
-  <div class="row">
-    <h1>{{ name }} {{ surname }}</h1>
-  </div>
-  <div class="row">
-    <div *ngFor="let row of table?.pagamenti" class="col-md-2 col-lg-1 col-sm-3 bordered">
-      <div>{{ row.mese }}</div>
-      <div>{{ row.euro}} €</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-2 offset-lg-10 col-md-12 col-sm-12 total"> Totale: {{ total }} €</div>
-  </div>
-
-  <div class="row bottom">
-    <button class="btn btn-dark">SAVE PDF</button>
-  </div>
+<div *ngFor="let row of table?.pagamenti" class="bordered">
+  <div>{{ row.mese }}</div>
+  <div>{{ row.euro}} €</div>
 </div>

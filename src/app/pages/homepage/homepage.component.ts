@@ -8,10 +8,16 @@ import {SimpleGlobal} from 'ng2-simple-global';
 })
 export class HomepageComponent implements OnInit {
   user: any;
-
+  leftMenu = false;
   constructor(private globals: SimpleGlobal) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
+
+  onNotify(status: boolean) {
+    this.leftMenu = status;
+  }
 
 
 }

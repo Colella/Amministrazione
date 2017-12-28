@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SimpleGlobal} from 'ng2-simple-global';
 
 @Component({
@@ -8,13 +8,21 @@ import {SimpleGlobal} from 'ng2-simple-global';
 })
 export class HeaderComponent implements OnInit {
   @Input('user') user: any;
-
+  @Output() openLeftMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor(private globals: SimpleGlobal) {
 
   }
 
   ngOnInit() {
     this.user = localStorage.getItem('user');
+  }
+
+  openMenu() {
+    this.openLeftMenu.emit(true);
+  }
+
+  closeMenu() {
+    this.openLeftMenu.emit(false);
   }
 
   logout() {
