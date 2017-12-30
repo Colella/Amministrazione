@@ -8,7 +8,7 @@ import {SimpleGlobal} from 'ng2-simple-global';
 })
 export class HeaderComponent implements OnInit {
   @Input('user') user: any;
-  @Output() openLeftMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
+  openLeftMenu = false;
   constructor(private globals: SimpleGlobal) {
 
   }
@@ -18,11 +18,11 @@ export class HeaderComponent implements OnInit {
   }
 
   openMenu() {
-    this.openLeftMenu.emit(true);
+   this.openLeftMenu = true;
   }
 
   closeMenu() {
-    this.openLeftMenu.emit(false);
+    this.openLeftMenu = false;
   }
 
   logout() {

@@ -1,22 +1,39 @@
+<div class="header row">
 
-  <div class="header row">
-
-    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 head">
-      <div class="menu-logo" (mouseenter)="openMenu()" (mouseleave)="closeMenu()">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </div>
-      <div class="title">
-        Amministrazione De Luca
-      </div>
-
+  <div class="col-lg-5 col-md-6 col-sm-8 col-xs-8 col-9 head">
+    <div class="menu-logo" (mouseover)="openMenu()" (mouseleave)="closeMenu()"
+         [ngClass]="{'menu-logo-actived' : openLeftMenu}">
+      <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
-
-    <div class="col-lg-3 offset-lg-4 panel col-md-4 offset-md-2 col-sm-4 offset-sm-3 col-xs-4"
-         *ngIf="globals['USER'] !== undefined">
-      <!--Benvenuto, {{ globals['USER'] }}-->
+    <div class="title">
+      Amministrazione De Luca
     </div>
-    <div class="col-lg-2 panel col-md-2 col-sm-1 col-xs-4 logout" *ngIf="globals['USER'] !== undefined">
-      <i class="fa fa-user-circle" aria-hidden="true"></i> <a (click)="logout()">Logout</a>
-    </div>
+    <!--(mouseleave)="closeMenu()"-->
   </div>
+
+ <!-- <div class="col-lg-3 offset-lg-4 panel col-md-4 offset-md-2 col-sm-4 offset-sm-3 col-xs-4"
+       *ngIf="globals['USER'] !== undefined">
+    &lt;!&ndash;Benvenuto, {{ globals['USER'] }}&ndash;&gt;
+  </div>-->
+  <div class="col-lg-2 offset-lg-5 panel col-md-3 offset-md-3 col-sm-4 col-xs-4 col-3 logout" *ngIf="globals['USER'] !== undefined">
+    <i class="fa fa-user-circle" aria-hidden="true"></i> <i class="fa fa-arrow-circle-right zucca" aria-hidden="true"></i> <a class="text-to-hide"(click)="logout()">Logout</a>
+  </div>
+
+
+  <div class="left-menu" [ngClass]="{'hidden' : !openLeftMenu, 'showed' : openLeftMenu}" (mouseenter)="openLeftMenu ? openMenu() : ''"
+       (mouseleave)="closeMenu()">
+    <div [ngClass]="{'menu-items' : openLeftMenu, 'menu-items-hidden' : !openLeftMenu}">
+      Home
+      <!--<hr>-->
+    </div>
+    <div [ngClass]="{'menu-items' : openLeftMenu, 'menu-items-hidden' : !openLeftMenu}">
+      F.A.Q
+      <!--<hr>-->
+    </div>
+    <div [ngClass]="{'menu-items' : openLeftMenu, 'menu-items-hidden' : !openLeftMenu}">
+      Contacts
+    </div>
+
+  </div>
+</div>
 

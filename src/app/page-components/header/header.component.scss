@@ -20,29 +20,44 @@
   padding-top: 10px;
   height: 100%;
   transition: 0.3s;
+  cursor: pointer;
 
 }
 
 .title, .logout {
   margin-top: 10px;
+
 }
 
-.menu-logo:hover {
+.text-to-hide {
+  @media (max-width: 575px) {
+    font-size: 0;
+  }
+}
+
+.menu-logo-actived {
   background-color: $link-hover;
   color: black;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
-
-  .row {
-    margin-left: 0 !important;
-  margin-right: 0 !important;
+.zucca {
+  @media (min-width: 575px) {
+    display: none;
   }
+}
 
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
 .panel {
   text-align: right;
-   padding-right: 30px;
+  @media (min-width: 575px) {
+
+    padding-right: 30px;
+  }
 }
 
 a {
@@ -57,3 +72,45 @@ a:hover {
 .fa {
   margin-right: 10px;
 }
+
+.left-menu {
+  width: 250px;
+  /*height: 210px;*/
+  background-color: #8b8b8b;
+  position: absolute;
+  top: 70px;
+  transition: 0.3s;
+}
+
+.hidden {
+  opacity: 0;
+  transition: 0.3s;
+  height: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.menu-items {
+  opacity: 1;
+  transition: 0.3s;
+  height: 70px !important;
+  padding-top: 13px;
+  padding-left: 10px;
+  border-bottom: 3px solid #1c1c1c;
+  color: $text-darker;
+  cursor: pointer;
+}
+
+.menu-items:hover {
+  color: white;
+}
+
+.menu-items-hidden {
+  opacity: 0;
+  height: 70px !important;
+  padding-top: 13px;
+  padding-left: 10px;
+  /*transition: 0.9s;*/
+}
+
+
