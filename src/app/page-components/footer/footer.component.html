@@ -1,5 +1,5 @@
 
-<div class="row page-footer">
+<div class="row page-footer" [ngClass]="{ 'logged' : globals['USER_LOGGED'],  'not-logged' : !globals['USER_LOGGED']}">
 
   <div class="footer-text col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4  offset-sm-4">
     Contact information: <a href="mailto:n.colella@hotmail.it">

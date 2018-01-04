@@ -9,6 +9,7 @@ import {SimpleGlobal} from 'ng2-simple-global';
 export class HeaderComponent implements OnInit {
   @Input('user') user: any;
   openLeftMenu = false;
+  openRightMenu = false;
   constructor(private globals: SimpleGlobal) {
 
   }
@@ -17,12 +18,22 @@ export class HeaderComponent implements OnInit {
     this.user = localStorage.getItem('user');
   }
 
-  openMenu() {
+  openMenuLeft() {
    this.openLeftMenu = true;
+    this.openRightMenu = false;
   }
 
-  closeMenu() {
+  closeMenuLeft() {
     this.openLeftMenu = false;
+  }
+
+  openMenuRight() {
+    this.openRightMenu = true;
+    this.openLeftMenu = false;
+  }
+
+  closeMenuRight() {
+    this.openRightMenu = false;
   }
 
   logout() {

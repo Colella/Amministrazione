@@ -24,28 +24,58 @@
 
 }
 
-.title, .logout {
+.menu-logo-right {
+  padding-top: 10px;
+  height: 70px;
+  transition: 0.3s;
+  cursor: pointer;
+  padding-left: 10px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.title {
   margin-top: 10px;
+  @media (max-width: 511px) {
+   /* margin-top: 15px;
+   font-size: 22px;*/
+  }
+}
+
+.logout {
 
 }
 
 .text-to-hide {
-  @media (max-width: 575px) {
+/*  @media (max-width: 575px) {
     font-size: 0;
-  }
+  }*/
 }
 
-.menu-logo-actived {
+.menu-logo-actived, .menu-logo:hover, .menu-logo-right:hover {
   background-color: $link-hover;
   color: black;
   transition: 0.4s;
 }
 
-.zucca {
-  @media (min-width: 575px) {
-    display: none;
-  }
+/*
+.fa-user-circle:hover {
+  background-color: $link-hover;
+  color: black;
+  height: 70px;
+  transition: 0.4s;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
+.fa-user-circle {
+  cursor: pointer;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+*/
+
 
 .row {
   margin-left: 0 !important;
@@ -54,20 +84,20 @@
 
 .panel {
   text-align: right;
-  @media (min-width: 575px) {
+  /*@media (min-width: 575px) {
 
     padding-right: 30px;
-  }
+  }*/
 }
 
-a {
+/*a {
   cursor: pointer;
   color: $link !important;
 }
 
 a:hover {
   color: $link-hover !important;
-}
+}*/
 
 .fa {
   margin-right: 10px;
@@ -75,17 +105,41 @@ a:hover {
 
 .left-menu {
   width: 250px;
-  /*height: 210px;*/
   background-color: #8b8b8b;
   position: absolute;
   top: 70px;
   transition: 0.3s;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+
+}
+
+.right-menu {
+  width: 250px;
+  background-color: #8b8b8b;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  margin-right: 0 !important;
+  transition: 0.3s;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.hidden-r {
+  right: 0;
+  opacity: 0;
+ width: 0;
+  overflow: hidden;
+  transition: 0.9s;
 }
 
 .hidden {
   opacity: 0;
-  transition: 0.3s;
-  height: 0 !important;
+  width: 0;
+  transition: 0.9s;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
@@ -108,9 +162,9 @@ a:hover {
 .menu-items-hidden {
   opacity: 0;
   height: 70px !important;
-  padding-top: 13px;
-  padding-left: 10px;
+ /* padding-top: 13px;
+  padding-left: 10px;*/
+  width: 0 !important;
   /*transition: 0.9s;*/
 }
-
 

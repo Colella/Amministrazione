@@ -1,39 +1,52 @@
 <div class="header row">
 
   <div class="col-lg-5 col-md-6 col-sm-8 col-xs-8 col-9 head">
-    <div class="menu-logo" (mouseover)="openMenu()" (mouseleave)="closeMenu()"
+    <div class="menu-logo" (click)="!openLeftMenu ? openMenuLeft() : closeMenuLeft();"
          [ngClass]="{'menu-logo-actived' : openLeftMenu}">
       <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
     <div class="title">
-      Amministrazione De Luca
+      De Luca
     </div>
-    <!--(mouseleave)="closeMenu()"-->
+  </div>
+  <div class="col-lg-1 offset-lg-6 panel col-md-2 offset-md-4 col-sm-4 col-xs-4 col-3 logout">
+
+    <div class="menu-logo-right" (click)="!openRightMenu ? openMenuRight() : closeMenuRight();"
+         [ngClass]="{'menu-logo-actived' : openRightMenu}">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>
+    </div>
+    <!--<i class="fa fa-arrow-circle-right zucca" aria-hidden="true"></i>-->
   </div>
 
- <!-- <div class="col-lg-3 offset-lg-4 panel col-md-4 offset-md-2 col-sm-4 offset-sm-3 col-xs-4"
-       *ngIf="globals['USER'] !== undefined">
-    &lt;!&ndash;Benvenuto, {{ globals['USER'] }}&ndash;&gt;
-  </div>-->
-  <div class="col-lg-2 offset-lg-5 panel col-md-3 offset-md-3 col-sm-4 col-xs-4 col-3 logout" *ngIf="globals['USER'] !== undefined">
-    <i class="fa fa-user-circle" aria-hidden="true"></i> <i class="fa fa-arrow-circle-right zucca" aria-hidden="true"></i> <a class="text-to-hide"(click)="logout()">Logout</a>
-  </div>
 
-
-  <div class="left-menu" [ngClass]="{'hidden' : !openLeftMenu, 'showed' : openLeftMenu}" (mouseenter)="openLeftMenu ? openMenu() : ''"
-       (mouseleave)="closeMenu()">
+  <div class="left-menu" [ngClass]="{'hidden' : !openLeftMenu, 'showed' : openLeftMenu}" (mouseleave)="closeMenuLeft()">
     <div [ngClass]="{'menu-items' : openLeftMenu, 'menu-items-hidden' : !openLeftMenu}">
       Home
-      <!--<hr>-->
     </div>
     <div [ngClass]="{'menu-items' : openLeftMenu, 'menu-items-hidden' : !openLeftMenu}">
       F.A.Q
-      <!--<hr>-->
     </div>
     <div [ngClass]="{'menu-items' : openLeftMenu, 'menu-items-hidden' : !openLeftMenu}">
       Contacts
     </div>
-
   </div>
+
+  <div class="right-menu" [ngClass]="{'hidden-r' : !openRightMenu, 'showed' : openRightMenu}"
+       (mouseleave)="closeMenuRight()">
+    <div [ngClass]="{'menu-items' : openRightMenu, 'menu-items-hidden' : !openRightMenu}"
+         *ngIf="globals['USER_LOGGED']">
+      Benvenuto, {{ globals['USER'] }}
+    </div>
+    <div [ngClass]="{'menu-items' : openRightMenu, 'menu-items-hidden' : !openRightMenu}"
+         *ngIf="globals['USER_LOGGED']">
+      <a class="text-to-hide" (click)="logout()">Logout</a>
+    </div>
+    <div [ngClass]="{'menu-items' : openRightMenu, 'menu-items-hidden' : !openRightMenu}"
+         *ngIf="!globals['USER_LOGGED']">
+      <a class="text-to-hide" (click)="login()">Login</a>
+    </div>
+  </div>
+
+
 </div>
 

@@ -1,13 +1,8 @@
 <div class="container-fluid">
   <app-header [user]="user" (openLeftMenu)="onNotify($event)"></app-header>
 
-
-  <div [ngSwitch]="globals['USER_LOGGED']" class="row home-page">
-    <div class="col-lg-2 col-md-2 left-menu " [ngClass]="{'hidden' : !leftMenu, 'showed' : leftMenu}">
-     <!-- <app-left-menu [leftMenu]="leftMenu"></app-left-menu>-->
-    </div>
-    <div id="main" class="col-lg-8 col-md-4 col-sm-4 col-xs-4">
-         <!--//[ngClass]="{'offset-md-2 offset-lg-2 offset-sm-3 ' : !leftMenu}">-->
+  <div [ngSwitch]="globals['USER_LOGGED']" class="row main-page">
+    <div class="box">
       <div *ngSwitchCase="true">
         <app-data-table></app-data-table>
       </div>
@@ -16,6 +11,6 @@
       </div>
     </div>
   </div>
-
-  <app-footer></app-footer>
+  <div class="clearfooter"></div>
 </div>
+<app-footer></app-footer>
