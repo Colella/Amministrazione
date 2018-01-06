@@ -1,6 +1,13 @@
-<div class="data-table">
-<div *ngFor="let row of table?.pagamenti" class="bordered">
-  <div>{{ row.mese }}</div>
-  <div>{{ row.euro}} €</div>
-</div>
+<div class="data-table row">
+  <div class="profile col-lg-6 col-md-6">
+    <div>{{ name }}</div>
+    <div>{{ surname }} </div>
+    <div class="info"> Informazioni: </div>
+  </div>
+  <div class="col-lg-6 col-md-6">
+    <div *ngFor="let row of table?.pagamenti" class="bordered">
+      <div>{{ row.mese }}</div>
+      <div>{{ row.euro}} €</div>
+    </div>
+  </div>
 </div>

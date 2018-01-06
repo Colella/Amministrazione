@@ -155,6 +155,16 @@ a:hover {
   cursor: pointer;
 }
 
+.menu-items-first {
+  opacity: 1;
+  transition: 0.3s;
+  height: 70px !important;
+  padding-top: 13px;
+  padding-left: 10px;
+  border-bottom: 3px solid #1c1c1c;
+  color: $text-darker;
+}
+
 .menu-items:hover {
   color: white;
 }

@@ -14,23 +14,9 @@
 .bordered {
   border-width: 1px 1px 1px 1px;
   border-style: solid;
-  border-color: black;
-  background-color: $link !important;
-}
-
-.total {
-  border-width: 1px 1px 1px 1px;
-  border-style: solid;
-  border-color: black;
-  background-color: $link;
-}
-
-.container-fluid {
-  min-height: 400px;
-}
-
-h1 {
-  font-size: 24px;
+  padding: 5px;
+  border-color: #1c1c1c;
+  background-color: $link-hover !important;
 }
 
 .bottom {
@@ -41,7 +27,15 @@ h1 {
 }
 
 .btn-dark {
-  color: $link-hover !important;;
+  color: $link-hover !important;
   background-color: black;
   border-color: #343a40;
+}
+
+.profile {
+  color: $text !important;;
+}
+
+.info {
+  margin-top: 30px;
 }

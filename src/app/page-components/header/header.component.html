@@ -33,7 +33,7 @@
 
   <div class="right-menu" [ngClass]="{'hidden-r' : !openRightMenu, 'showed' : openRightMenu}"
        (mouseleave)="closeMenuRight()">
-    <div [ngClass]="{'menu-items' : openRightMenu, 'menu-items-hidden' : !openRightMenu}"
+    <div [ngClass]="{'menu-items-first' : openRightMenu, 'menu-items-hidden' : !openRightMenu}"
          *ngIf="globals['USER_LOGGED']">
       Benvenuto, {{ globals['USER'] }}
     </div>
